@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>new_file</title>
+		<meta name="description" content="">
+		<meta name="author" content="Philcool12">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+
+
+<style>
+
+body
+{
+color:#404040;
+	height:100%;
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+@font-face {
+font-family: "mohave";
+src: url("Mohave.otf") format("opentype");
+}
+
+.main {
+	font-family: "mohave";
+	font-size: 18px;
+	color: #404040;
+}
+
+.header {
+	font-family: "mohave";
+	color: #3A72F3;
+	font-weight: bold;
+	text-align: center;
+}
+
+.subheader {
+	font-family: mohave;
+	color: #cbcbcb;
+	text-align: center;
+
+}
+
+.score {
+  color: #E6990E;
+  background-color: #F5D946;
+  border: 3px solid #F6B61F;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  width: 150px;
+  text-align: center;
+}
+
+.selected {
+  background-color: #3DBA6B;
+  border: 3px solid #2FAD5A;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
+
+.wrong {
+  background-color: #DE5962;
+  border: 3px solid #D74D52;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
+
+.sbutton {
+  background-color: #3DBA6B;
+  border: 3px solid #2FAD5A;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+}
+
+.rbutton {
+  background-color: #DE5962;
+  border: 3px solid #D74D52;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+}
+
+.lesson {
+  color: #404040;
+  background-color: #4C8FF4;
+  border: 3px solid #3A72F3;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 110px;
+  height: 150px;
+}
+
+.futurelesson {
+  color: #404040;
+  background-color: #737373;
+  border: 3px solid #404040;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 110px;
+  height: 150px;
+}
+
+.completedlesson {
+  background-color: #3DBA6B;
+  border: 3px solid #2FAD5A;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 110px;
+  height: 150px;
+}
+
+
+.qborder {
+  border: 3px solid #F6F6E8;
+  border-radius: 10px;
+}
+
+.aborder {
+  color: #404040;
+  background-color: #30B9CD;
+  border: 3px solid #deded9;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  width: 60%
+}
+
+.goborder {
+  color: #404040;
+  background-color: #4C8FF4;
+  border: 3px solid #3A72F3;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  width: 60%
+}
+
+.gborder {
+  color: #F6F6E8;
+  background-color: #3DBA6B;
+  border: 3px solid #2FAD5A;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  width: 60%
+}
+
+.rborder {
+  color: #F6F6E8;
+  background-color: #DE5962;
+  border: 3px solid #D74D52;  
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  width: 60%
+}
+
+.disappear {
+  background-color: #cbcbcb;
+  border: 3px solid #aaaaaa;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  color: #737373
+}
+
+.other {
+	font-style: normal;
+	font-variant: none;
+	font-size: 12px;
+	font-family: serif;
+	color: #F6F6E8;
+}
+
+.boxed {
+  border: 2px dashed #404040;
+}
+
+.lessontable {
+    border-collapse: separate;
+    border-spacing: 30px 15px;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 30px 15px;
+    width: 60%;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.button {
+  background-color: #4C8FF4;
+  border: 3px solid #3A72F3;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
+
+.hide {
+  background-color: #F5F5F5;
+  border: 3px solid #F5F5F5;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+}
+
+.mouseBeOffMe {
+border-top:    10px  solid #404040; 
+border-bottom: 10px  solid #404040; 
+border-left:   6px   solid #404040; 
+border-right:  10px  solid #404040; 
+}
+
+.mouseBeOnMe {
+border-top:    6px   solid #404040;
+border-bottom: 14px  solid #404040; 
+border-left:   10px  solid #404040; 
+border-right:  6px   solid #404040;
+}
+
+.mouseBeDown {
+border-top:    13px  solid #404040;
+border-bottom: 7px   solid #404040; 
+border-left:   10px  solid #404040; 
+border-right:  6px   solid #404040; 
+}
+
+.mouseBeUp {
+border-top:    10px  solid #404040;
+border-bottom: 10px  solid #404040; 
+border-left:   10px  solid #404040; 
+border-right:  6px   solid #404040;
+}
+
+.container{ 
+	width:100%; 
+}
+
+.home{
+   color: #e1af33;
+   font-weight: bold;
+   float:left
+ }
+
+
+</style>
+
+	<body bgcolor="#f5f5f5" class="main">
+	<div align="center">
+	<header>
+		<div id="home" class = "home"><img src="images/home.png" alt="home image"></div>
+		<div class = "header"><font size = 24>Znam</font></div>
+				<div class = "subheader"><p>The Macedonian learning program for Laura Stefanovski</p></div>
+		<p id = "score" class="score"><b>Score: 0</p>
+		<br>
+
+	<table id="tablewelcome" class = "lessontable">
+  	<p id = "instructionline">Welcome to Learnadonian.  Is this your first time, or do you have a progress code?</p>
+  		<tr>
+		    <th id="New" class="lesson">I'm<br><br>New</th>
+		    <th id="Code" class="lesson">I have<br><br>a Code</th>
+		</tr>
+<br>
+</table>
+	<div id = "progressCode">
+            <p>
+              <label for="pcode">Progress Code</label>
+              <input name="pcode" type="text" class="text" id="pcode1" tabindex="100" />
+            </p>
+            <button id = "submitcode">Submit</button>
+           </div>
+
+	<table id="table0" class = "lessontable">
+  		<tr>
+		    <th id="Lesson1" class="futurelesson">Lesson 1<br><br>Greetings<br>I</th>
+		    <th id="Lesson2" class="futurelesson">Lesson 2<br><br>Greetings<br>II</th>
+			<th id="Lesson3" class="futurelesson">Lesson 3<br><br>Greetings<br>III</th>
+		</tr>
+		<tr>
+			<th id="Lesson4" class="futurelesson">Lesson 4<br><br>Greetings<br>IV</th>
+			<th id="Lesson5" class="futurelesson">Lesson 5<br><br>Greetings<br>V</th>
+			<th id="Lesson6" class="futurelesson">Lesson 6<br><br>Greetings<br>VI</th>
+		</tr>
+		<br>
+</table>
+		
+		
+	</header>	
+</div>
+
+
+
+
+
+
+<div id="QuestionBoard" class="qborder">
+<div align="center">
+				<p id="Question">Question</p>
+				<p id="sentence">Sentence</p>
+</div>
+
+	<div align="center" color="red"><b><p id="attempt" class="aborder">SlotA</p></b></div>
+	<div id = "Options">
+	<p id="1T">1T</p>	
+	<p id="1Q">1Q</p>
+	<p id="1O1">1O1</p>
+	<p id="1O2">1O2</p>
+	<p id="1O3">1O3</p>
+	<p id="1O4">1O4</p>
+	<p id="1O5">1O5</p>
+	<p id="1O6">1O6</p>
+	<p id="1O7">1O7</p>
+	<p id="1O8">1O8</p>
+	<p id="1NoW">1NoW</p>
+
+	<p id="2T">2T</p>
+	<p id="2Q">2Q</p>
+	<p id="2O1">2O1</p>
+	<p id="2O2">2O2</p>
+	<p id="2O3">2O3</p>
+	<p id="2O4">2O4</p>
+	<p id="2O5">2O5</p>
+	<p id="2O6">2O6</p>
+	<p id="2O7">2O7</p>
+	<p id="2O8">2O8</p>
+	<p id="2NoW">2NoW</p>
+
+	<p id="3T">3T</p>
+	<p id="3Q">3Q</p>
+	<p id="3O1">3O1</p>
+	<p id="3O2">3O2</p>
+	<p id="3O3">3O3</p>
+	<p id="3O4">3O4</p>
+	<p id="3O5">3O5</p>
+	<p id="3O6">3O6</p>
+	<p id="3O7">3O7</p>
+	<p id="3O8">3O8</p>
+	<p id="3NoW">3NoW</p>
+
+	<p id="4T">4T</p>
+	<p id="4Q">4Q</p>
+	<p id="4O1">4O1</p>
+	<p id="4O2">4O2</p>
+	<p id="4O3">4O3</p>
+	<p id="4O4">4O4</p>
+	<p id="4O5">4O5</p>
+	<p id="4O6">4O6</p>
+	<p id="4O7">4O7</p>
+	<p id="4O8">4O8</p>
+	<p id="4NoW">4NoW</p>
+
+	<p id="5T">5T</p>
+	<p id="5Q">5Q</p>
+	<p id="5O1">5O1</p>
+	<p id="5O2">5O2</p>
+	<p id="5O3">5O3</p>
+	<p id="5O4">5O4</p>
+	<p id="5O5">5O5</p>
+	<p id="5O6">5O6</p>
+	<p id="5O7">5O7</p>
+	<p id="5O8">5O8</p>
+	<p id="5NoW">5NoW</p>
+
+	<p id="6T">6T</p>
+	<p id="6Q">6Q</p>
+	<p id="6O1">6O1</p>
+	<p id="6O2">6O2</p>
+	<p id="6O3">6O3</p>
+	<p id="6O4">6O4</p>
+	<p id="6O5">6O5</p>
+	<p id="6O6">6O6</p>
+	<p id="6O7">6O7</p>
+	<p id="6O8">6O8</p>
+	<p id="6NoW">6NoW</p>
+
+	<p id="7T">7T</p>
+	<p id="7Q">7Q</p>
+	<p id="7O1">7O1</p>
+	<p id="7O2">7O2</p>
+	<p id="7O3">7O3</p>
+	<p id="7O4">7O4</p>
+	<p id="7O5">7O5</p>
+	<p id="7O6">7O6</p>
+	<p id="7O7">7O7</p>
+	<p id="7O8">7O8</p>
+	<p id="7NoW">7NoW</p>
+
+	<p id="8T">8T</p>
+	<p id="8Q">8Q</p>
+	<p id="8O1">8O1</p>
+	<p id="8O2">8O2</p>
+	<p id="8O3">8O3</p>
+	<p id="8O4">8O4</p>
+	<p id="8O5">8O5</p>
+	<p id="8O6">8O6</p>
+	<p id="8O7">8O7</p>
+	<p id="8O8">8O8</p>
+	<p id="8NoW">8NoW</p>
+
+	<p id="9T">9T</p>
+	<p id="9Q">9Q</p>
+	<p id="9O1">9O1</p>
+	<p id="9O2">9O2</p>
+	<p id="9O3">9O3</p>
+	<p id="9O4">9O4</p>
+	<p id="9O5">9O5</p>
+	<p id="9O6">9O6</p>
+	<p id="9O7">9O7</p>
+	<p id="9O8">9O8</p>
+	<p id="9NoW">9NoW</p>
+
+	<p id="10T">10T</p>
+	<p id="10Q">10Q</p>
+	<p id="10O1">10O1</p>
+	<p id="10O2">10O2</p>
+	<p id="10O3">10O3</p>
+	<p id="10O4">10O4</p>
+	<p id="10O5">10O5</p>
+	<p id="10O6">10O6</p>
+	<p id="10O7">10O7</p>
+	<p id="10O8">10O8</p>
+	<p id="10NoW">10NoW</p>
+
+</div>
+<br>
+		<table id="table1" class="table">
+  		<tr>
+		    <th id="S1" class="button">Slot1</th>
+		    <th id="S2" class="button">Slot2</th>
+		    <th id="S3" class="button">Slot3</th>
+		    <th id="S4" class="button">Slot4</th>
+		</tr>
+		<tr>
+		    <th id="S5" class="button">Slot5</th>
+		    <th id="S6" class="button">Slot6</th>
+		    <th id="S7" class="button">Slot7</th>
+		    <th id="S8" class="button">Slot8</th>
+		</tr>	
+	</table> 
+<br>
+
+<div align="center">
+<div id = "submit" class="sbutton">Submit Answer
+</div>
+<br>
+<div id = "reset" class="rbutton">Reset Answer</div>
+<br>
+
+</div>
+
+</div>
+<br>
+
+
+			<footer>
+				<p>
+					&copy; Copyright  by Philcool12
+				</p>
+			</footer>
+		</div>
+	<script 
+		src="Lesson1.js">
+	</script>
+	<script 
+		src="Lesson2.js">
+	</script>
+	<script
+		src="Lesson3.js">
+	</script>
+	<script 
+		src="Lesson4.js">
+	</script>
+	<script
+		src="Learnadonian.js">
+	</script>
+	</body>
+</html>
