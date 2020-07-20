@@ -5,6 +5,7 @@
 	document.getElementById("reset").style.display = "none";
 	document.getElementById("submit").style.display = "none";
 	document.getElementById("home").style.display = "none";
+	document.getElementById("idea").style.display = "none";
 	document.getElementById("QuestionBoard").style.display = "none";
 	document.getElementById("table0").style.display = "none";
 	document.getElementById("table1").style.visibility = "hidden";
@@ -22,6 +23,7 @@ document.getElementById("New").onclick = function() {
 	for (var i = 1; i <= 10; i++) codecheck(i);
 	for (var i = 1; i <= 10; i++) picklesson(i);	
 	document.getElementById("tablewelcome").style.display = "none";
+	document.getElementById("laura").style.display = "none";
 	document.getElementById("instructionline").innerHTML = "Great!  Please start with Lesson I below.<br><br>More lessons will become available to you as you progress.<br>Progress codes are provided after each lesson so you can always pick up where you left off.";
 };
 
@@ -31,6 +33,7 @@ document.getElementById("Code").onclick = function() {
 	for (var i = 1; i <= 10; i++) codecheck(i);
 	for (var i = 1; i <= 10; i++) picklesson(i);	
 	document.getElementById("tablewelcome").style.display = "none";
+	document.getElementById("laura").style.display = "none";
 	document.getElementById("instructionline").innerHTML = "Please enter your code below";
 };
 
@@ -77,6 +80,16 @@ document.getElementById("home").onclick = function () {
 	document.getElementById("table0").style.display = "block";
 };
 
+document.getElementById("idea").onclick = function () {
+	if (document.getElementById("overlay").style.display == "block"){
+	document.getElementById("overlay").style.display = "none";
+	document.getElementById("headnote").style.backgroundColor = "#30B9CD";
+	} else {
+		document.getElementById("overlay").style.display = "block";
+		document.getElementById("headnote").style.backgroundColor = "#F5F5F5";
+	}
+};
+
 //////CHOOSE LESSON//////
 
 function picklesson (x) {
@@ -94,6 +107,7 @@ function picklesson (x) {
 			document.getElementById("table1").style.visibility = "visible";
 			document.getElementById("table0").style.display = "none";
 			document.getElementById("home").style.display = "block";
+			document.getElementById("idea").style.display = "block";
 			playGame();
 		};
 	};
