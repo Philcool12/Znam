@@ -91,7 +91,7 @@ document.getElementById("idea").onclick = function () {
 };
 
 
-setTimeout(function(){ document.getElementById("welcome").style.display = "none"; }, 1000);
+setTimeout(function(){ document.getElementById("welcome").style.display = "none"; }, 2000);
 
 //////CHOOSE LESSON//////
 
