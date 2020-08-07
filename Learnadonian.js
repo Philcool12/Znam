@@ -90,6 +90,9 @@ document.getElementById("idea").onclick = function () {
 	}
 };
 
+
+setTimeout(function(){ document.getElementById("welcome").style.display = "none"; }, 1000);
+
 //////CHOOSE LESSON//////
 
 function picklesson (x) {
