@@ -126,6 +126,16 @@ src: url("Fishtail.otf") format("opentype");
   height: 150px;
 }
 
+.lessonhead {
+  color: #404040;
+  background-color: #30B9CD;
+  border: 3px solid #404040;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 50px;
+}
+
 .futurelesson {
   color: #404040;
   background-color: #737373;
@@ -292,7 +302,7 @@ border-right:  6px   solid #404040;
 }
 
 .home{
-   color: #e1af33;
+   color: #30B9CD;
    font-weight: bold;
    vertical-align: center;
  }
@@ -358,9 +368,11 @@ border-right:  6px   solid #404040;
 
 	<div align="center">
 	<header class = "header" align="center" id="headnote"> 
-		<span style="width: 15%; float: left" id="home" class = "home"><img src="images/home.png"  height="35px" alt="home image"></span>
+		<span style="width: 15%; float: left" id="home" class = "home"><font size = 20>  <</font></span>
+<!---		<span style="width: 15%; float: left" id="home" class = "home"><img src="images/home.png"  height="35px" alt="home image"></span>-->
 		<span><font size = 20>Znam</font></span>
-		<span style="width: 15%; float: right" id="idea" class = "home"><img src="images/idea.png"  height="35px" alt="idea image"></span>
+<!---		<span style="width: 15%; float: right" id="idea" class = "home"><img src="images/idea.png"  height="35px" alt="idea image"></span>-->
+		<span style="width: 15%; float: right" id="idea" class = "home"><font size = 20>x  </font></span>
 		<br style="clear:both;"/>
 	</header>
 		<div id="laura" class = "subheader" style="color:#30B9CD;"><p>The Macedonian learning program for Laura Stefanovski</p></div>
@@ -384,16 +396,19 @@ border-right:  6px   solid #404040;
             <button id = "submitcode">Submit</button>
            </div>
 
-	<table id="table0" class = "lessontable">
-  		<tr>
-		    <th id="Lesson1" class="futurelesson">Lesson 1<br><br>Greetings<br>I</th>
-		    <th id="Lesson2" class="futurelesson">Lesson 2<br><br>Greetings<br>II</th>
-			<th id="Lesson3" class="futurelesson">Lesson 3<br><br>Greetings<br>III</th>
+	<table id="table0"  class = "lessontable">
+		<tr>
+			<th id="lessonheader" colspan="3" class="lessonhead">Lesson 1: Greetings</th>		
 		</tr>
 		<tr>
-			<th id="Lesson4" class="futurelesson">Lesson 4<br><br>Greetings<br>IV</th>
-			<th id="Lesson5" class="futurelesson">Lesson 5<br><br>Greetings<br>V</th>
-			<th id="Lesson6" class="futurelesson">Lesson 6<br><br>Greetings<br>VI</th>
+		    <th id="Lesson1" class="futurelesson">Activity 1<br><br>Greetings<br>I</th>
+		    <th id="Lesson2" class="futurelesson">Activity 2<br><br>Greetings<br>II</th>
+			<th id="Lesson3" class="futurelesson">Activity 3<br><br>Greetings<br>III</th>
+		</tr>
+		<tr>
+			<th id="Lesson4" class="futurelesson">Activity 4<br><br>Greetings<br>IV</th>
+			<th id="Lesson5" class="futurelesson">Activity 5<br><br>Greetings<br>V</th>
+			<th id="Lesson6" class="futurelesson">Activity 6<br><br>Greetings<br>VI</th>
 		</tr>
 		<br>
 </table>

@@ -4,8 +4,8 @@
 	document.getElementById("Options").style.display = "none";
 	document.getElementById("reset").style.display = "none";
 	document.getElementById("submit").style.display = "none";
-	document.getElementById("home").style.display = "none";
-	document.getElementById("idea").style.display = "none";
+//	document.getElementById("home").style.display = "none";
+//	document.getElementById("idea").style.display = "none";
 	document.getElementById("QuestionBoard").style.display = "none";
 	document.getElementById("table0").style.display = "none";
 	document.getElementById("table1").style.visibility = "hidden";
@@ -73,7 +73,8 @@ document.getElementById("home").onclick = function () {
 	document.getElementById("Options").style.display = "none";
 	document.getElementById("reset").style.display = "none";
 	document.getElementById("submit").style.display = "none";
-	document.getElementById("home").style.display = "none";
+	document.getElementById("home").style.color = "#30B9CD";
+//	document.getElementById("home").style.display = "none";
 	document.getElementById("QuestionBoard").style.display = "none";
 	document.getElementById("table1").style.visibility = "hidden";
 	document.getElementById("score").style.display = "none";
@@ -84,9 +85,12 @@ document.getElementById("idea").onclick = function () {
 	if (document.getElementById("overlay").style.display == "block"){
 	document.getElementById("overlay").style.display = "none";
 	document.getElementById("headnote").style.backgroundColor = "#30B9CD";
-	} else {
-		document.getElementById("overlay").style.display = "block";
-		document.getElementById("headnote").style.backgroundColor = "#F5F5F5";
+	document.getElementById("idea").style.color = "#30B9CD";
+	document.getElementById("home").style.color = "#30B9CD";
+//Toggle functionality
+//	} else {
+//		document.getElementById("overlay").style.display = "block";
+//		document.getElementById("headnote").style.backgroundColor = "#F5F5F5";
 	}
 };
 
@@ -94,6 +98,13 @@ document.getElementById("idea").onclick = function () {
 setTimeout(function(){ document.getElementById("welcome").style.display = "none";}, 2500);
 
 //////CHOOSE LESSON//////
+
+document.getElementById("lessonheader").onclick = function () {
+		document.getElementById("overlay").style.display = "block";
+		document.getElementById("headnote").style.backgroundColor = "#F5F5F5";
+		document.getElementById("idea").style.color = "#404040";
+		document.getElementById("home").style.color = "#F5F5F5";
+};
 
 function picklesson (x) {
 	var z = "Lesson" + x;
@@ -109,8 +120,10 @@ function picklesson (x) {
 			document.getElementById("QuestionBoard").style.display = "block";
 			document.getElementById("table1").style.visibility = "visible";
 			document.getElementById("table0").style.display = "none";
-			document.getElementById("home").style.display = "block";
-			document.getElementById("idea").style.display = "block";
+			document.getElementById("home").style.color = "#404040";
+//			document.getElementById("home").style.display = "block";
+//			document.getElementById("idea").style.color = "#30B9CD";
+//			document.getElementById("idea").style.display = "block";
 			playGame();
 		};
 	};
