@@ -91,7 +91,7 @@ document.getElementById("idea").onclick = function () {
 };
 
 
-setTimeout(function(){ document.getElementById("welcome").style.display = "none";}, 2900);
+setTimeout(function(){ document.getElementById("welcome").style.display = "none";}, 2500);
 
 //////CHOOSE LESSON//////
 
@@ -152,6 +152,7 @@ function Sentence (z) {
 /////SET THE PAIRS/////
 
 document.getElementById("Question").innerHTML = "Question #" + z + ".  Translate the following sentence:";
+document.getElementById("Question").style.display = "block";
 document.getElementById("sentence").style.display = "block";
 document.getElementById("attempt").style.display = "block";
 document.getElementById("sentence").innerHTML = document.getElementById(z+"Q").innerHTML;
@@ -442,6 +443,7 @@ document.getElementById("S8").onclick = function () {
 function Match(z){
 
 document.getElementById("Question").innerHTML = "Question #" + z + ".  Match the pairs:";
+document.getElementById("Question").style.display = "block";
 document.getElementById("sentence").style.display = "none";
 document.getElementById("attempt").style.display = "none";
 
@@ -1661,6 +1663,7 @@ document.getElementById("S8").onclick = function () {
 function PickFour (z){
 
 	document.getElementById("Question").innerHTML = "Question #" + z + ".  Which of these words means '" + document.getElementById(z+"Q").innerHTML + "':";
+	document.getElementById("Question").style.display = "block";
 	document.getElementById("sentence").style.display = "none";
 	document.getElementById("attempt").style.display = "none";
 	
